@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #dedbfd;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+        }
+        center{
+     display: flexbox;   
+     background-color: rgb(154, 154, 228);
+     width: 50vh;
+     height: 50vh;
+     align-items: center;
+     justify-content: center;
+     border-radius: 8px;
+     margin: 15%;
+     margin-left: 47%;
+     position: absolute;
+    }
+    </style>
+    <script>
+        function fn(){
+            let num = parseInt(document.getElementById("n").value);
+            let choice = document.getElementById("choice").value;
+            if(choice == "celsius"){
+                let cel = (num - 32) * .55;
+                document.getElementById("p1").innerHTML= cel + "C";
+                return;
+            }else if(choice == "fahrenheit"){
+                let f = (1.8 * num) + 32;
+                document.getElementById("p1").innerHTML = f + "f";
+                return;
+            }else{
+                document.getElementById("p1").innerhtml = "not a proper number";
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+        <h1>Temperature Converter</h1>
+        <br>
+        Degree:
+        <input id="n" type="number">
+        <br>
+        <br>
+        <br>
+        Type:
+        <select name="" id="choice" onclick="fn()">
+            <option value="celsius">celsius</option>
+            <option value="fahrenheit">fahrenheit</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        Result:
+        <br>
+        <p id="p1"></p>
+    </center>
+</body>
+</html>
